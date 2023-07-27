@@ -3,6 +3,7 @@ const getState = ({ getStore, getActions, setStore }) => {
 		store: {
 			characters: [],
 			character: {},
+			planets: [],
 		},
 		actions: {
 			getCharacters: async ()=>{
@@ -24,6 +25,18 @@ const getState = ({ getStore, getActions, setStore }) => {
 					console.log(data)
 					setStore({
 						character: data
+					})
+				} catch (error) {
+					console.log(error)
+				}
+			},
+			getPlanets: async ()=>{
+				try {
+					const response = await fetch('https://swapi.dev/api/planets')
+					const data = await response.json()
+					console.log(data)
+					setStore({
+						planets: data.results
 					})
 				} catch (error) {
 					console.log(error)

@@ -1,14 +1,18 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import './nav.css'
+//import logo from '../../img/starwars_logo.png'
 
 export const Navbar = () => {
 	return (
 			<nav class="navbar navbar-expand-lg bg-body-tertiary">
-				<div class="container-fluid">
-					<a class="navbar-brand" href="#"><img src=""/></a>
-					<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
-					<span class="navbar-toggler-icon"></span>
-					</button>
+				<div class="container" id='navcontainer'>
+					<div class='container' id='logodiv'>
+						<a class="navbar-brand" href="#">starwars</a>
+						<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+						<span class="navbar-toggler-icon"></span>
+						</button>
+					</div>
 					<div class="collapse navbar-collapse" id="navbarNavDropdown">
 					<ul class="navbar-nav">
 						<li class="nav-item dropdown">
