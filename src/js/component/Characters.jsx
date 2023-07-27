@@ -8,8 +8,10 @@ export const Characters = ()=>{
         actions.getCharacters()
     },[])
 
-    const favoriteClick = (character)=>{
+    const favoriteClick = (character, id)=>{
+        id = id + 1
         character.type = 'character'
+        character.id = id
         if(store.favorites.includes(character)){
             actions.deleteFavorite(character)
         } else {
@@ -29,7 +31,7 @@ export const Characters = ()=>{
                         <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
                         <div className="d-flex justify-content-between">
                             <Link to={"/character/" + (id + 1)} class="btn btn-primary">Learn More</Link>
-                            <a onClick={()=>favoriteClick(character)}>&#10084;</a>
+                            <a onClick={()=>favoriteClick(character, id)}>&#10084;</a>
                         </div>
                     </div>
                 </div>

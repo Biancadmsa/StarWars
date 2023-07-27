@@ -6,7 +6,9 @@ export const Planets = ()=>{
     const {store, actions} = useContext(Context)
     useEffect(()=>{actions.getPlanets()}, [])
 
-    const favoriteClick = (planet)=>{
+    const favoriteClick = (planet, id)=>{
+        id = id + 1
+        planet.id = id
         planet.type = 'planet'
         if(store.favorites.includes(planet)){
             actions.deleteFavorite(planet)
@@ -28,7 +30,7 @@ export const Planets = ()=>{
                             <p className="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
                             <div className="d-flex justify-content-between">
                                 <Link to={"/planet/" + (id + 1)} className="btn btn-primary">Learn More</Link>
-                                <a onClick={()=>favoriteClick(planet)}>&#10084;</a>
+                                <a onClick={()=>favoriteClick(planet, id)}>&#10084;</a>
                             </div>
                         </div>
                     </div>

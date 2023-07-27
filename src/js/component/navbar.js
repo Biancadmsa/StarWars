@@ -26,7 +26,7 @@ export const Navbar = () => {
 						<ul class="dropdown-menu">
 							{store.favorites.map((favorite, id)=>(
 								<div className="d-flex justify-content-between">
-									<Link to={`${favorite.type}/${id + 1}`} key={id}><li><a class="dropdown-item">{favorite.name}</a></li></Link>
+									<Link to={`${favorite.type}/${favorite.id}`} key={id}><li><a class="dropdown-item">{favorite.name}</a></li></Link>
 									<a onClick={()=>{actions.deleteFavorite(favorite)}}>&#128465;</a>
 								</div>
 							))}
