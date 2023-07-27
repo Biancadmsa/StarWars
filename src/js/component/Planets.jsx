@@ -5,6 +5,16 @@ import { Link } from "react-router-dom";
 export const Planets = ()=>{
     const {store, actions} = useContext(Context)
     useEffect(()=>{actions.getPlanets()}, [])
+
+    const favoriteClick = (planet)=>{
+        planet.type = 'planet'
+        if(store.favorites.includes(planet)){
+            actions.deleteFavorite(planet)
+        } else {
+            actions.addFavorite(planet)
+        }       
+    }
+
     return(
         <>
             <h1>Planets</h1>
@@ -16,7 +26,10 @@ export const Planets = ()=>{
                         <div className="card-body">
                             <h5 className="card-title">{planet.name}</h5>
                             <p className="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                            <Link to={"/planet/" + (id + 1)} className="btn btn-primary">Learn More</Link>
+                            <div className="d-flex justify-content-between">
+                                <Link to={"/planet/" + (id + 1)} className="btn btn-primary">Learn More</Link>
+                                <a onClick={()=>favoriteClick(planet)}>&#10084;</a>
+                            </div>
                         </div>
                     </div>
                     ))}

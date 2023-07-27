@@ -4,7 +4,8 @@ const getState = ({ getStore, getActions, setStore }) => {
 			characters: [],
 			character: {},
 			planets: [],
-			planet: {}
+			planet: {},
+			favorites: []
 		},
 		actions: {
 			getCharacters: async ()=>{
@@ -55,6 +56,23 @@ const getState = ({ getStore, getActions, setStore }) => {
 				} catch (error) {
 					console.log(error)
 				}
+			},
+
+			addFavorite: (favorite) =>{
+				const store = getStore()
+				setStore({
+					favorites: [...store.favorites, favorite]
+				})
+				console.log(store.favorites)
+			},
+
+			deleteFavorite: (favorite) => {
+				const store = getStore()
+				const newFavorites = store.favorites.filter(fav => fav !== favorite)
+				setStore({
+					favorites: newFavorites
+				})
+				console.log(store.favorites)
 			},
 			// Use getActions to call a function within a fuction
 			exampleFunction: () => {

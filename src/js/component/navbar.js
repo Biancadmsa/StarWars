@@ -1,9 +1,13 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import { Context } from "../store/appContext";
+import { useContext } from "react";
 import './nav.css'
 //import logo from '../../img/starwars_logo.png'
 
 export const Navbar = () => {
+	const {store, actions} = useContext(Context)
+
 	return (
 			<nav class="navbar navbar-expand-lg bg-body-tertiary">
 				<div class="container" id='navcontainer'>
@@ -17,12 +21,15 @@ export const Navbar = () => {
 					<ul class="navbar-nav">
 						<li class="nav-item dropdown">
 						<a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-							Dropdown link
+							Favorites({store.favorites.length})
 						</a>
 						<ul class="dropdown-menu">
-							<li><a class="dropdown-item" href="#">Action</a></li>
-							<li><a class="dropdown-item" href="#">Another action</a></li>
-							<li><a class="dropdown-item" href="#">Something else here</a></li>
+							{store.favorites.map((favorite, id)=>(
+								<div className="d-flex justify-content-between">
+									<Link to={`${favorite.type}/${id + 1}`} key={id}><li><a class="dropdown-item">{favorite.name}</a></li></Link>
+									<a onClick={()=>{actions.deleteFavorite(favorite)}}>&#128465;</a>
+								</div>
+							))}
 						</ul>
 						</li>
 					</ul>
