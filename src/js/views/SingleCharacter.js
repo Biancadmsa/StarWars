@@ -6,9 +6,7 @@ import { Context } from "../store/appContext";
 export const SingleCharacter = props => {
 	const { store, actions } = useContext(Context);
 	const params = useParams();
-	useEffect(()=>{
-		actions.getCharacterProfile(params.theid)
-	},[])
+	useEffect(()=>{actions.getCharacterProfile(params.theid)},[])
 	return (
 		<>
 			<div class='d-flex justify-content-around' id='maincontainer'>
