@@ -17,7 +17,7 @@ export const SinglePlanet = props => {
 				<div class='d-flex flex-column justify-content-between pt-5' id='infocontainer'>
 						<table class="table">
 							<thead>
-								<tr>
+								<tr >
 								<th scope="col-6">Characteristic</th>
 								<th scope="col-6">Value</th>
 								</tr>

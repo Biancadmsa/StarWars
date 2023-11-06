@@ -12,7 +12,7 @@ export const SingleCharacter = props => {
 			<div class='d-flex justify-content-around' id='maincontainer'>
 				<div class='d-flex flex-column align-items-center'id='imgcontainer'>
 					<h4>{store.character.name}</h4>
-					<img src={`https://starwars-visualguide.com/assets/img/characters/${params.theid}.jpg`}/>
+					<img class="imgcharacter" src={`https://starwars-visualguide.com/assets/img/characters/${params.theid}.jpg`}/>
 				</div>
 				<div class='d-flex flex-column justify-content-between pt-5' id='infocontainer'>
 						<table class="table">

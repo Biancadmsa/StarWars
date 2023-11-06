@@ -1,4 +1,76 @@
 #nanavcontainer {
     display: flex;
     justify-content: space-between;
+    background: black;
+  
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    color:black;
+    font-size: 1.1rem;
+    font-weight: bold;
+    /* outline: 1px solid red; */
+  }
+  
+body{
+    font-size: 1.6rem;
+    background: url("https://lumiere-a.akamaihd.net/v1/images/image_1921b77b.jpeg") ;
+    background-size: cover;
+    background-position: center;
+   
+   ;
+    
+  }
+  
+ 
+  h1 {
+    color: yellow; /* Cambia el color del texto a amarillo */
+    font-size: 6em; /* Aumenta el tamaño de la fuente (ajusta el valor según tus preferencias) */
+    text-shadow: 10px 3px 2px black; /* Agrega una sombra negra con desplazamiento de 2px en X y 2px en Y */
+}
+
+h5{
+    color:black ;
+    font-weight: bold;
+    font-size: 1.5em; 
+    text-shadow: 4px 6px 2px yellow;
+}
+
+h4{
+    color: yellow; /* Cambia el color del texto a amarillo */
+    font-size: 2em; /* Aumenta el tamaño de la fuente (ajusta el valor según tus preferencias) */
+    text-shadow: 10px 3px 2px black;
+
+}
+th
+{
+    color:black;
+    font-weight: bold;
+    font-size: 1.5em; 
+    text-shadow: 4px 6px 2px yellow;
+}
+.card{
+    border-color: yellow;
+    border-style:dashed;
+    border-width: 5px;
+    background-color: rgba(14, 35, 45, 0.94); 
+}
+p{
+    color:white;
+}
+.imgcharacter{
+    border-color: yellow;
+    border-style:dashed;
+    border-width: 7px;
+    background-color: rgba(14, 35, 45, 0.94); 
+
+}
+
+
+.caja{
+
+    background: red;
 }
