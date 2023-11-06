@@ -58,7 +58,7 @@ export const SinglePlanet = props => {
 							</tbody>
 						</table>
 						<div class='container pb-5'>
-							<h4>"A planet within the Star Wars universe"</h4>
+							<h4>"A planet with in the Star Wars universe"</h4>
 						</div>
 				</div>
 			</div>
