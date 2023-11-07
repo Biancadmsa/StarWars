@@ -10,7 +10,7 @@ const getState = ({ getStore, getActions, setStore }) => {
 		actions: {
 			getCharacters: async ()=>{
 				try {
-					const response = await fetch('https://swapi.tech/api/people')
+					const response = await fetch('https://swapi.dev/api/people')
 					const data = await response.json()
 					console.log(data)
 					setStore({
@@ -22,7 +22,7 @@ const getState = ({ getStore, getActions, setStore }) => {
 			},
 			getCharacterProfile: async (id)=>{
 				try {
-					const response = await fetch('https://swapi.tech/api/people/' + id)
+					const response = await fetch('https://swapi.dev/api/people/' + id)
 					const data = await response.json()
 					console.log(data)
 					setStore({
@@ -34,7 +34,7 @@ const getState = ({ getStore, getActions, setStore }) => {
 			},
 			getPlanets: async ()=>{
 				try {
-					const response = await fetch('https://swapi.tech/api/planets')
+					const response = await fetch('https://swapi.dev/api/planets')
 					const data = await response.json()
 					console.log(data)
 					setStore({
@@ -47,7 +47,7 @@ const getState = ({ getStore, getActions, setStore }) => {
 
 			getPlanetProfile: async (id)=>{
 				try {
-					const response = await fetch(`https://swapi.tech/api/planets/${id}`)
+					const response = await fetch(`https://swapi.dev/api/planets/${id}`)
 					const data = await response.json()
 					console.log(data)
 					setStore({
